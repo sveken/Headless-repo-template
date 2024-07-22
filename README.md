@@ -8,6 +8,11 @@ Majority of configs will contain passwords to log in. It is therfore important t
 
 The container has a variable to enable access to private repos by using a generated user access token. 
 
+You can test private repo access with git installed on your local machine by using `git clone https://youraccesstoken:x-oauth-basic@urltotherepo-removehttps`
+
+example
+`git clone https://superfancywzsedfgdf:x-oauth-basic@github.com/sveken/super-private-test-headless-repo`
+
 Githubs documentation on user access tokens can be [found here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
 
 ## Configuration
