@@ -1,7 +1,7 @@
 # Headless repo template
 Template showing the file structure for using repo sync inside [VoxelBones Resonite Headless docker image](https://github.com/voxelbonecloud/headless-docker)
 
-You may use this repo to for testing or a template. The config file found inside config will load an empty gridspace world without logging in.
+You may use this repo for testing or a template. The config file found inside config will load an empty gridspace world without logging in.
 
 ## Important Note
 Majority of configs will contain passwords to log in. It is therfore important to make your repo private, limit access to trusted users, or even self host your repo.
