@@ -6,9 +6,9 @@ You may use this repo for testing or a template. The config file found inside co
 ## Important Note
 Majority of configs will contain passwords to log in. It is therfore important to make your repo private, limit access to trusted users, or even self host your repo.
 
-The container has a variable to enable access to private repos by using a generated user access token. 
+The container has a variable to enable access to private repos by using a generated personal user access token. 
 
-You can test private repo access with git installed on your local machine by using `git clone https://youraccesstoken:x-oauth-basic@urltotherepo-removehttps`
+You can test private repo access with git installed on your local machine by using `git clone https://git_username:your_personal_access_token@urltotherepo-removehttps`
 
 example
 `git clone https://superfancywzsedfgdf:x-oauth-basic@github.com/sveken/super-private-test-headless-repo`
@@ -26,6 +26,8 @@ The following container variables configure this feature.
 
 `REPO_IS_PRIVATE`= This changes the git commands to use authentication via an access token. Required for private repositories and highly recommended for configs with passwords. 
 
-`REPO_ACCESS_TOKEN`= The access token for the repo if `REPO_IS_PRIVATE` is true
+`REPO_USERNAME`= Your git username for accessing the repo, used in conjuction with the Personal Token
+
+`REPO_ACCESS_TOKEN`= The access token for the repo if `REPO_IS_PRIVATE` is true. Needs to be a PAT and only read access is required. 
 
 `KEEP_IN_SYNC`= If set to true this will wipe the /Config directory, rml_mods and rml_config inside the container before updating the directories from the repo. This clears any untracked files that may have been added directly to these directories on the host, Ensuring they stay in sync with what is downloaded from git.
