@@ -11,14 +11,14 @@ The container has a variable to enable access to private repos by using a genera
 You can test private repo access with git installed on your local machine by using `git clone https://git_username:your_personal_access_token@urltotherepo-removehttps`
 
 example
-`git clone https://superfancywzsedfgdf:x-oauth-basic@github.com/sveken/super-private-test-headless-repo`
+`git clone https://sveken:superfancywzsedfgd@github.com/sveken/super-private-test-headless-repo`
 
 Githubs documentation on user access tokens can be [found here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
 
 ## Configuration
 The following container variables configure this feature.
 
-`ENABLE_GIT_CONFIG`= Setting this to true will make git clone/pull the repository to the staging directory and copy any .json files inside the [config](config) folder to /Config inside the container.
+`ENABLE_GIT_CONFIG`= Setting this to true will make git clone/pull the repository to the staging directory and copy any .json files inside the [config](config) folder to /Config inside the container. **NOTE:** the /Config directly in your compose but not have `:ro` on the end, as this marks it as read only.
 
 `ENABLE_GIT_MODS`= Setting this to true will make git clone/pull the repository to the staging directory. Next the container will copy the files inside the [rml_lib](rml_libs) [rml_mods](rml_mods) and [rml_config](rml_config) to the required directories inside the headless installation. **NOTE:** This also requires `ENABLE_MODS` to be true.
 
